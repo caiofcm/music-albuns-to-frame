@@ -1,4 +1,4 @@
-# Project Title
+# Music albums to Frame
 
 Create a frame with your favorites album covers
 
