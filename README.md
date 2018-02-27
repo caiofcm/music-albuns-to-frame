@@ -4,7 +4,7 @@ Create a frame with your favorites album covers
 
 ## Getting Started
 
-Access the demo: [Link](https://caiofcm.github.io/music-albums-to-frame)
+Access the demo: [Link](https://caiofcm.github.io/music-albuns-to-frame/)
 
 ### Resources
 
