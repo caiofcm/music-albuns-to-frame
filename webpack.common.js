@@ -1,7 +1,9 @@
 /*eslint-disable */
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   entry: {
     app: './src/main.js',
@@ -10,8 +12,9 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Album to Frame',
-      template: 'index.ejs'
-    })
+      template: 'index.ejs',
+    }),
+    new ExtractTextPlugin("styles.css"),
   ],
   output: {
     filename: '[name].bundle.js',
@@ -27,17 +30,34 @@ module.exports = {
         }]
       },
       {
+        // test: /\.css$/,
+        // use: [
+        //   'style-loader',
+        //   'css-loader'
+        // ]
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: { loader: "css-loader", options: { minimize: true } },
+        }),
       },
+      // {
+      //   test: /\.(png|svg|jpg|gif)$/,
+      //   use: [
+      //     'file-loader'
+      //   ]
+      // }
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          'file-loader'
-        ]
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true,
+            },
+          },
+        ],
       }
     ],
 
