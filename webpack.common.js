@@ -7,7 +7,7 @@ module.exports = {
     app: './src/main.js',
   },
   plugins: [
-    // new CleanWebpackPlugin(['example']),
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Album to Frame',
       template: 'index.ejs'
@@ -15,10 +15,17 @@ module.exports = {
   ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'example')
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: [/node_modules/],
+        use: [{
+          loader: 'babel-loader',
+        }]
+      },
       {
         test: /\.css$/,
         use: [

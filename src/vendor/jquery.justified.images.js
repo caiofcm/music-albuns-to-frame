@@ -88,7 +88,7 @@
         totalWidth += block.width;
       });
       var perRowWidth = totalWidth / Math.ceil(totalWidth / w);
-      console.log('rows', Math.ceil(totalWidth / w));
+      // console.log('rows', Math.ceil(totalWidth / w));
       var tw = 0;
       while (baseLine < limit) {
         var row = {
