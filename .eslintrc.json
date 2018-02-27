@@ -3,7 +3,14 @@
     "plugins": [
         "import"
     ],
+    "globals": {
+      "document": true,
+      "window": false,
+      "fetch": false
+    },
     "rules": {
-      "no-param-reassign": [{ "props": false }]
+      "semi": 0,
+      "arrow-body-style": 0,
+      "no-param-reassign": 0
     }
 }

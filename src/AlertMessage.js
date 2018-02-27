@@ -5,12 +5,19 @@ function createMarkup(msg) {
 }
 
 export default function renderAlertMessage(msg, type) {
-  let settings = { background: '#f44336' };
-  if (type === 'danger') settings.background = '#f44336';
-  if (type === 'info') settings.background = 'blue';
-  if (type === 'success') settings.background = 'green';
-  if (type === 'warnning') settings.background = 'yellow';
-  elAlertBox.style.backgroundColor = settings.background;
+  const settings = {
+    background: '#f44336',
+    position: 'fixed',
+    bottom: '5%',
+    left: '50%',
+  };
+  if (type === 'danger') settings.background = '#f44336'
+  if (type === 'info') settings.background = 'blue'
+  if (type === 'success') settings.background = 'green'
+  if (type === 'warnning') settings.background = 'yellow'
+  Object.keys(settings).forEach((key) => {
+    elAlertBox.style[key] = settings[key]
+  })
   elAlertBox.style.display = 'block';
   elAlertBox.innerHTML = createMarkup(msg);
   setTimeout(() => {

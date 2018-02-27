@@ -1,8 +1,13 @@
+import './main.css'
 import searchEnterTrigger from './SearchTrigger'
-import selectAlbumTrigger from './SelectAlbumTrigger'
-import playListTrigger from './PlayListTrigger'
+import { selectionOfAlbums } from './SelectionAlbums'
+import { fetchAPITokenFromBackEnd } from './SpotifyServerSide'
+import createAlbumFrameTrigger from './CreateAlbumFrame'
+import SaveFrameToFileTrigger from './SaveFrameToFile'
 
-searchEnterTrigger();
-selectAlbumTrigger();
-playListTrigger();
-
+console.log('Application started')
+fetchAPITokenFromBackEnd()
+searchEnterTrigger()
+selectionOfAlbums()
+createAlbumFrameTrigger()
+SaveFrameToFileTrigger()
