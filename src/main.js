@@ -1,4 +1,5 @@
 import './main.css'
+import './normalize.css'
 import searchEnterTrigger from './SearchTrigger'
 import { selectionOfAlbums } from './SelectionAlbums'
 import { fetchAPITokenFromBackEnd } from './SpotifyServerSide'
