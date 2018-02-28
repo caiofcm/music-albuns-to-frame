@@ -3,6 +3,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -15,6 +16,7 @@ module.exports = {
       template: 'index.ejs',
     }),
     new ExtractTextPlugin("styles.css"),
+    new StyleExtHtmlWebpackPlugin(),
   ],
   output: {
     filename: '[name].bundle.js',
