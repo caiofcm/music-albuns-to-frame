@@ -6,7 +6,7 @@ let spotify;
 const elTriggerAuth = document.getElementById('trigger-auth')
 
 const config = {
-  URL: 'http://localhost:8888/login',
+  URL: 'https://music-albums-to-frame.herokuapp.com/login',
 }
 
 /**
