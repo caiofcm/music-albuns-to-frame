@@ -9,7 +9,7 @@ Access the demo: [Link](https://caiofcm.github.io/music-albuns-to-frame/)
 ### Resources
 
 - [Jquery Image Justified plugin](http://nitinhayaran.github.io/Justified.js/demo/)
-- Spotify API
+- Spotify API using backend in Heroku platform for authentication
 
 ### Installing
 
